@@ -1,0 +1,7 @@
+{
+  "username": "root",
+  "password": "",
+  "database": "therkverma_addweb",
+  "host": "localhost",
+  "dialect": "mysql"
+}

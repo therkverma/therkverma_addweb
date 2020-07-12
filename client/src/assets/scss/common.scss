@@ -1,0 +1,299 @@
+@import "./screen.scss";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 18px;
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+  @include mobile {
+    cursor: pointer;
+  }
+  @include tablet {
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+  font-weight: bold;
+}
+
+img {
+  border: 0;
+}
+  
+a {
+  text-decoration: none;
+}
+
+input:-webkit-autofill {
+  -webkit-background: white;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+$spaceamounts: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  75,
+  100
+); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+}
+
+$alignments: (center, left, right); // Leave this variable alone
+
+@each $align in $alignments {
+  .text-align-#{$align} {
+    text-align: #{$align} !important;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.evenly-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.around-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.heading1,
+.heading2,
+.heading3,
+.heading4,
+.heading5,
+.heading6,
+.heading7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+
+.blockquote:before {
+  content: "\201c";
+}
+
+.background_image {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+  height: auto;
+  width: 100vw;
+}
+
+.cke_inner {
+  z-index: 9999 !important;
+}
+
+
+#dark-overlay {
+  z-index: 10;
+  background: black;
+  opacity: .5;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.close-btn {
+  z-index: 9999 !important;
+  position: fixed;
+  top: calc(50% - 220px);
+  left: calc(50% + 300px);
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  @media screen and (max-width: 750px) {
+    left: 90%;
+    top: 27%;
+  }
+}
+
+#testimonial-modal-movie {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 640px;
+  max-height: 60vh;
+  width: 95vw;
+  height: 100%;
+  z-index: 1001;
+  background-color: black;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.yotpo-display-wrapper {
+  transition: opacity 1s !important;
+}
+
+.errorSpan {
+  color: red;
+}
+
+.error_border {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  border: 1px solid red !important;
+  border-right: 1px solid red;
+  span {
+    @extend .errorSpan;
+  }
+}
+
+.p-relative {
+  position: relative;
+}
+
+
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+.container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.container .column, .container .columns {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
